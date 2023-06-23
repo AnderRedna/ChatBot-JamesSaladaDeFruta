@@ -1,5 +1,6 @@
 const express = require('express');
 require('dotenv/config');
+const port = process.env.PORT || 3000;
 const cors = require('cors');
 const { Configuration, OpenAIApi } = require('openai');
 
@@ -36,6 +37,6 @@ app.post('/message', async (req, res) => {
   res.send({ message: chatbotResponse });
 });
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+app.listen(port, () => {
+  console.log('Server is running on port ' + port + '...');
 });
