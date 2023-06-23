@@ -29,7 +29,7 @@ app.post('/message', async (req, res) => {
             content: message,
           },
     ],
-    max_tokens: 100,
+    max_tokens: 200,
   });
   
   const chatbotResponse = response['data']['choices'][0]['message']['content'];
