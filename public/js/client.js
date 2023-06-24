@@ -14,7 +14,7 @@ form.addEventListener("submit", async (e) => {
     <img src="./icons/user.png" alt="user icon"> <span>${userMessage}</span>
   </div>`;
 
-  const response = await fetch('http://localhost:'+ serverUrl + '/message', {
+  const response = await fetch('http://localhost:7104/message', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
