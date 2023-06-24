@@ -2,7 +2,8 @@
 const form = document.getElementById("chat-form");
 const input = document.getElementById("chat-input");
 const messages = document.getElementById("chat-messages");
-
+const serverUrl = document.body.getAttribute('data-server-url');
+console.log(serverUrl)
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -13,7 +14,7 @@ form.addEventListener("submit", async (e) => {
     <img src="./icons/user.png" alt="user icon"> <span>${userMessage}</span>
   </div>`;
 
-  const response = await fetch('http://localhost:3000/message', {
+  const response = await fetch('http://localhost:'+ serverUrl + '/message', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
